@@ -77,10 +77,10 @@ impl GaussianMeanFactor {
 
     pub fn update_message_to_y(&mut self) -> Result<f64, String> {
         let (new_marginal, new_message, difference) = mean_factor_message(
-            self.y.get(),
-            self.message_to_y,
             self.x.get(),
             self.message_to_x,
+            self.y.get(),
+            self.message_to_y,
             self.beta_squared,
         )?;
 
